@@ -160,6 +160,8 @@
 			this.Controls.Add(this.buttonRegister);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.panel1);
+			this.MaximizeBox = false;
+			this.MinimizeBox = false;
 			this.Name = "RegisterForm";
 			this.Text = "Malaysian Restaurant Ordering System | Register";
 			this.panel1.ResumeLayout(false);
