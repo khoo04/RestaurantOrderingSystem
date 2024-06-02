@@ -32,11 +32,11 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
-			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.labelPassword = new System.Windows.Forms.Label();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox4 = new System.Windows.Forms.TextBox();
 			this.labelConfirmPassword = new System.Windows.Forms.Label();
+			this.labelPassword = new System.Windows.Forms.Label();
+			this.textBox4 = new System.Windows.Forms.TextBox();
+			this.textBox3 = new System.Windows.Forms.TextBox();
+			this.textBox2 = new System.Windows.Forms.TextBox();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.buttonRegister = new System.Windows.Forms.Button();
 			this.panel1.SuspendLayout();
@@ -86,13 +86,15 @@
 			this.panel1.Size = new System.Drawing.Size(347, 177);
 			this.panel1.TabIndex = 2;
 			// 
-			// textBox2
+			// labelConfirmPassword
 			// 
-			this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox2.Location = new System.Drawing.Point(169, 49);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(164, 26);
-			this.textBox2.TabIndex = 1;
+			this.labelConfirmPassword.AutoSize = true;
+			this.labelConfirmPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelConfirmPassword.Location = new System.Drawing.Point(13, 128);
+			this.labelConfirmPassword.Name = "labelConfirmPassword";
+			this.labelConfirmPassword.Size = new System.Drawing.Size(137, 18);
+			this.labelConfirmPassword.TabIndex = 0;
+			this.labelConfirmPassword.Text = "Confirm Password";
 			// 
 			// labelPassword
 			// 
@@ -104,15 +106,6 @@
 			this.labelPassword.TabIndex = 0;
 			this.labelPassword.Text = "Password";
 			// 
-			// textBox3
-			// 
-			this.textBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox3.Location = new System.Drawing.Point(169, 87);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(164, 26);
-			this.textBox3.TabIndex = 1;
-			this.textBox3.UseSystemPasswordChar = true;
-			// 
 			// textBox4
 			// 
 			this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -122,19 +115,27 @@
 			this.textBox4.TabIndex = 1;
 			this.textBox4.UseSystemPasswordChar = true;
 			// 
-			// labelConfirmPassword
+			// textBox3
 			// 
-			this.labelConfirmPassword.AutoSize = true;
-			this.labelConfirmPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelConfirmPassword.Location = new System.Drawing.Point(13, 128);
-			this.labelConfirmPassword.Name = "labelConfirmPassword";
-			this.labelConfirmPassword.Size = new System.Drawing.Size(137, 18);
-			this.labelConfirmPassword.TabIndex = 0;
-			this.labelConfirmPassword.Text = "Confirm Password";
+			this.textBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox3.Location = new System.Drawing.Point(169, 87);
+			this.textBox3.Name = "textBox3";
+			this.textBox3.Size = new System.Drawing.Size(164, 26);
+			this.textBox3.TabIndex = 1;
+			this.textBox3.UseSystemPasswordChar = true;
+			// 
+			// textBox2
+			// 
+			this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBox2.Location = new System.Drawing.Point(169, 49);
+			this.textBox2.Name = "textBox2";
+			this.textBox2.Size = new System.Drawing.Size(164, 26);
+			this.textBox2.TabIndex = 1;
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Image = global::RestaurantOrderingSystem.Properties.Resources.Restaurant_Logo1;
+			this.pictureBox1.ErrorImage = null;
+			this.pictureBox1.Image = global::RestaurantOrderingSystem.Properties.Resources.Restaurant_Logo;
 			this.pictureBox1.Location = new System.Drawing.Point(145, 12);
 			this.pictureBox1.Name = "pictureBox1";
 			this.pictureBox1.Size = new System.Drawing.Size(186, 179);
