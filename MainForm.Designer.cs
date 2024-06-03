@@ -31,8 +31,8 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
-			this.button2 = new System.Windows.Forms.Button();
+			this.buttonLogin = new System.Windows.Forms.Button();
+			this.buttonRegister = new System.Windows.Forms.Button();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
@@ -64,29 +64,31 @@
 			this.label2.TabIndex = 1;
 			this.label2.Text = "\"Savor the Taste of Malaysia\"\n";
 			// 
-			// button1
+			// buttonLogin
 			// 
-			this.button1.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-			this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-			this.button1.Location = new System.Drawing.Point(318, 384);
-			this.button1.Margin = new System.Windows.Forms.Padding(2);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(117, 57);
-			this.button1.TabIndex = 2;
-			this.button1.Text = "LOGIN";
-			this.button1.UseVisualStyleBackColor = false;
+			this.buttonLogin.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+			this.buttonLogin.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonLogin.ForeColor = System.Drawing.SystemColors.ButtonFace;
+			this.buttonLogin.Location = new System.Drawing.Point(318, 384);
+			this.buttonLogin.Margin = new System.Windows.Forms.Padding(2);
+			this.buttonLogin.Name = "buttonLogin";
+			this.buttonLogin.Size = new System.Drawing.Size(117, 57);
+			this.buttonLogin.TabIndex = 2;
+			this.buttonLogin.Text = "LOGIN";
+			this.buttonLogin.UseVisualStyleBackColor = false;
+			this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
 			// 
-			// button2
+			// buttonRegister
 			// 
-			this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.button2.Location = new System.Drawing.Point(182, 384);
-			this.button2.Margin = new System.Windows.Forms.Padding(2);
-			this.button2.Name = "button2";
-			this.button2.Size = new System.Drawing.Size(117, 57);
-			this.button2.TabIndex = 3;
-			this.button2.Text = "REGISTER";
-			this.button2.UseVisualStyleBackColor = true;
+			this.buttonRegister.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonRegister.Location = new System.Drawing.Point(182, 384);
+			this.buttonRegister.Margin = new System.Windows.Forms.Padding(2);
+			this.buttonRegister.Name = "buttonRegister";
+			this.buttonRegister.Size = new System.Drawing.Size(117, 57);
+			this.buttonRegister.TabIndex = 3;
+			this.buttonRegister.Text = "REGISTER";
+			this.buttonRegister.UseVisualStyleBackColor = true;
+			this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
 			// 
 			// label4
 			// 
@@ -143,12 +145,13 @@
 			this.ClientSize = new System.Drawing.Size(616, 477);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.panel1);
-			this.Controls.Add(this.button2);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.buttonRegister);
+			this.Controls.Add(this.buttonLogin);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "MainForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Load += new System.EventHandler(this.Form1_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
@@ -161,8 +164,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonLogin;
+        private System.Windows.Forms.Button buttonRegister;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel1;

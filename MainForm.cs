@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RestaurantOrderingSystem.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,6 +21,22 @@ namespace RestaurantOrderingSystem
 		private void Form1_Load(object sender, EventArgs e)
 		{
 
+		}
+
+		private void buttonLogin_Click(object sender, EventArgs e)
+		{
+			LoginForm loginForm = new LoginForm();
+			this.Hide();	
+			loginForm.ShowDialog();
+			this.Close();
+		}
+
+		private void buttonRegister_Click(object sender, EventArgs e)
+		{
+			PasswordForm passwordForm = new PasswordForm();
+			this.Hide();
+			passwordForm.ShowDialog();
+			this.Close();
 		}
 	}
 }

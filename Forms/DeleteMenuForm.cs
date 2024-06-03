@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace RestaurantOrderingSystem.Forms
 {
-	public partial class RegisterForm : Form
+	public partial class DeleteMenuForm : Form
 	{
-		public RegisterForm()
+		public DeleteMenuForm()
 		{
 			InitializeComponent();
-		}
-
-		private void RegisterForm_Load(object sender, EventArgs e)
-		{
-			comboBoxRole.SelectedIndex = 0;
 		}
 	}
 }

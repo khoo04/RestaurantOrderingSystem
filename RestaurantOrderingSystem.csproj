@@ -63,6 +63,72 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddMenuForm.Designer.cs">
+      <DependentUpon>AddMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AppetizerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AppetizerForm.Designer.cs">
+      <DependentUpon>AppetizerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\BeverageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\BeverageForm.Designer.cs">
+      <DependentUpon>BeverageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CashierForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CashierForm.Designer.cs">
+      <DependentUpon>CashierForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DeleteMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DeleteMenuForm.Designer.cs">
+      <DependentUpon>DeleteMenuForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DessertForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DessertForm.Designer.cs">
+      <DependentUpon>DessertForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainCourseForm.Designer.cs">
+      <DependentUpon>MainCourseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ManagerForm.Designer.cs">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\PasswordForm.Designer.cs">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SpecialForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SpecialForm.Designer.cs">
+      <DependentUpon>SpecialForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ViewReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ViewReportForm.Designer.cs">
+      <DependentUpon>ViewReportForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -83,6 +149,39 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddMenuForm.resx">
+      <DependentUpon>AddMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AppetizerForm.resx">
+      <DependentUpon>AppetizerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\BeverageForm.resx">
+      <DependentUpon>BeverageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CashierForm.resx">
+      <DependentUpon>CashierForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DeleteMenuForm.resx">
+      <DependentUpon>DeleteMenuForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DessertForm.resx">
+      <DependentUpon>DessertForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainCourseForm.resx">
+      <DependentUpon>MainCourseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ManagerForm.resx">
+      <DependentUpon>ManagerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PasswordForm.resx">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SpecialForm.resx">
+      <DependentUpon>SpecialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ViewReportForm.resx">
+      <DependentUpon>ViewReportForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -28,6 +28,7 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
+			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.textBox1 = new System.Windows.Forms.TextBox();
@@ -37,8 +38,10 @@
 			this.textBox4 = new System.Windows.Forms.TextBox();
 			this.textBox3 = new System.Windows.Forms.TextBox();
 			this.textBox2 = new System.Windows.Forms.TextBox();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
 			this.buttonRegister = new System.Windows.Forms.Button();
+			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.labelRole = new System.Windows.Forms.Label();
+			this.comboBoxRole = new System.Windows.Forms.ComboBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -47,7 +50,7 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(13, 14);
+			this.label1.Location = new System.Drawing.Point(13, 15);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(78, 18);
 			this.label1.TabIndex = 0;
@@ -57,7 +60,7 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(13, 52);
+			this.label2.Location = new System.Drawing.Point(13, 53);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(80, 18);
 			this.label2.TabIndex = 0;
@@ -73,7 +76,9 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.comboBoxRole);
 			this.panel1.Controls.Add(this.label1);
+			this.panel1.Controls.Add(this.labelRole);
 			this.panel1.Controls.Add(this.labelConfirmPassword);
 			this.panel1.Controls.Add(this.labelPassword);
 			this.panel1.Controls.Add(this.label2);
@@ -83,14 +88,14 @@
 			this.panel1.Controls.Add(this.textBox1);
 			this.panel1.Location = new System.Drawing.Point(65, 207);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(347, 177);
+			this.panel1.Size = new System.Drawing.Size(347, 214);
 			this.panel1.TabIndex = 2;
 			// 
 			// labelConfirmPassword
 			// 
 			this.labelConfirmPassword.AutoSize = true;
 			this.labelConfirmPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelConfirmPassword.Location = new System.Drawing.Point(13, 128);
+			this.labelConfirmPassword.Location = new System.Drawing.Point(13, 129);
 			this.labelConfirmPassword.Name = "labelConfirmPassword";
 			this.labelConfirmPassword.Size = new System.Drawing.Size(137, 18);
 			this.labelConfirmPassword.TabIndex = 0;
@@ -100,7 +105,7 @@
 			// 
 			this.labelPassword.AutoSize = true;
 			this.labelPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelPassword.Location = new System.Drawing.Point(13, 90);
+			this.labelPassword.Location = new System.Drawing.Point(13, 91);
 			this.labelPassword.Name = "labelPassword";
 			this.labelPassword.Size = new System.Drawing.Size(78, 18);
 			this.labelPassword.TabIndex = 0;
@@ -132,6 +137,16 @@
 			this.textBox2.Size = new System.Drawing.Size(164, 26);
 			this.textBox2.TabIndex = 1;
 			// 
+			// buttonRegister
+			// 
+			this.buttonRegister.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonRegister.Location = new System.Drawing.Point(192, 444);
+			this.buttonRegister.Name = "buttonRegister";
+			this.buttonRegister.Size = new System.Drawing.Size(93, 31);
+			this.buttonRegister.TabIndex = 2;
+			this.buttonRegister.Text = "Register";
+			this.buttonRegister.UseVisualStyleBackColor = true;
+			// 
 			// pictureBox1
 			// 
 			this.pictureBox1.ErrorImage = null;
@@ -142,28 +157,44 @@
 			this.pictureBox1.TabIndex = 3;
 			this.pictureBox1.TabStop = false;
 			// 
-			// buttonRegister
+			// labelRole
 			// 
-			this.buttonRegister.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.buttonRegister.Location = new System.Drawing.Point(192, 399);
-			this.buttonRegister.Name = "buttonRegister";
-			this.buttonRegister.Size = new System.Drawing.Size(93, 31);
-			this.buttonRegister.TabIndex = 2;
-			this.buttonRegister.Text = "Register";
-			this.buttonRegister.UseVisualStyleBackColor = true;
+			this.labelRole.AutoSize = true;
+			this.labelRole.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelRole.Location = new System.Drawing.Point(16, 169);
+			this.labelRole.Name = "labelRole";
+			this.labelRole.Size = new System.Drawing.Size(77, 18);
+			this.labelRole.TabIndex = 0;
+			this.labelRole.Text = "User Role";
+			// 
+			// comboBoxRole
+			// 
+			this.comboBoxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxRole.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.comboBoxRole.FormattingEnabled = true;
+			this.comboBoxRole.Items.AddRange(new object[] {
+            "Cashier",
+            "Manager"});
+			this.comboBoxRole.Location = new System.Drawing.Point(169, 165);
+			this.comboBoxRole.Name = "comboBoxRole";
+			this.comboBoxRole.Size = new System.Drawing.Size(164, 26);
+			this.comboBoxRole.TabIndex = 2;
 			// 
 			// RegisterForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(476, 450);
+			this.ClientSize = new System.Drawing.Size(476, 508);
 			this.Controls.Add(this.buttonRegister);
 			this.Controls.Add(this.pictureBox1);
 			this.Controls.Add(this.panel1);
+			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.MinimizeBox = false;
 			this.Name = "RegisterForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Malaysian Restaurant Ordering System | Register";
+			this.Load += new System.EventHandler(this.RegisterForm_Load);
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -184,5 +215,7 @@
 		private System.Windows.Forms.TextBox textBox3;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button buttonRegister;
+		private System.Windows.Forms.ComboBox comboBoxRole;
+		private System.Windows.Forms.Label labelRole;
 	}
 }
