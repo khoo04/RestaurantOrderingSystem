@@ -34,6 +34,7 @@
 			this.orderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.newOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.saveOrderToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.categoryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.appetizerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,14 +44,18 @@
 			this.specialToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.panelOrderDetails = new System.Windows.Forms.Panel();
+			this.richTextBoxQuantity = new System.Windows.Forms.RichTextBox();
+			this.richTextBoxOrderDetails = new System.Windows.Forms.RichTextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.labelCustName = new System.Windows.Forms.Label();
 			this.labelOrderDetails = new System.Windows.Forms.Label();
 			this.labelOrder = new System.Windows.Forms.Label();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.buttonDeletePrevious = new System.Windows.Forms.Button();
+			this.buttonReset = new System.Windows.Forms.Button();
 			this.buttonSaveOrder = new System.Windows.Forms.Button();
 			this.buttonNew = new System.Windows.Forms.Button();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBoxName = new System.Windows.Forms.TextBox();
 			this.labelCust = new System.Windows.Forms.Label();
 			this.panelForm = new System.Windows.Forms.Panel();
 			this.menuStrip1.SuspendLayout();
@@ -61,12 +66,12 @@
 			// labelCashierName
 			// 
 			this.labelCashierName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-			this.labelCashierName.AutoSize = true;
+			this.labelCashierName.AutoEllipsis = true;
 			this.labelCashierName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.labelCashierName.Location = new System.Drawing.Point(22, 12);
 			this.labelCashierName.Name = "labelCashierName";
-			this.labelCashierName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-			this.labelCashierName.Size = new System.Drawing.Size(183, 18);
+			this.labelCashierName.RightToLeft = System.Windows.Forms.RightToLeft.No;
+			this.labelCashierName.Size = new System.Drawing.Size(188, 18);
 			this.labelCashierName.TabIndex = 0;
 			this.labelCashierName.Text = "Welcome, Cashier Name";
 			// 
@@ -87,6 +92,7 @@
 			this.orderToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.newOrderToolStripMenuItem,
             this.saveOrderToolStripMenuItem,
+            this.resetToolStripMenuItem,
             this.exitToolStripMenuItem});
 			this.orderToolStripMenuItem.Name = "orderToolStripMenuItem";
 			this.orderToolStripMenuItem.Size = new System.Drawing.Size(49, 20);
@@ -95,19 +101,27 @@
 			// newOrderToolStripMenuItem
 			// 
 			this.newOrderToolStripMenuItem.Name = "newOrderToolStripMenuItem";
-			this.newOrderToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.newOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.newOrderToolStripMenuItem.Text = "New Order";
+			this.newOrderToolStripMenuItem.Click += new System.EventHandler(this.newOrderToolStripMenuItem_Click);
 			// 
 			// saveOrderToolStripMenuItem
 			// 
 			this.saveOrderToolStripMenuItem.Name = "saveOrderToolStripMenuItem";
-			this.saveOrderToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.saveOrderToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.saveOrderToolStripMenuItem.Text = "Save Order";
+			// 
+			// resetToolStripMenuItem
+			// 
+			this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
+			this.resetToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+			this.resetToolStripMenuItem.Text = "Reset";
+			this.resetToolStripMenuItem.Click += new System.EventHandler(this.resetToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
 			this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-			this.exitToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+			this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
 			this.exitToolStripMenuItem.Text = "Exit";
 			this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
 			// 
@@ -163,11 +177,14 @@
 			this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
 			this.logOutToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
 			this.logOutToolStripMenuItem.Text = "Log Out";
+			this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
 			// 
 			// panelOrderDetails
 			// 
 			this.panelOrderDetails.AutoScroll = true;
 			this.panelOrderDetails.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.panelOrderDetails.Controls.Add(this.richTextBoxQuantity);
+			this.panelOrderDetails.Controls.Add(this.richTextBoxOrderDetails);
 			this.panelOrderDetails.Controls.Add(this.label1);
 			this.panelOrderDetails.Controls.Add(this.labelCustName);
 			this.panelOrderDetails.Controls.Add(this.labelOrderDetails);
@@ -180,11 +197,39 @@
 			this.panelOrderDetails.Size = new System.Drawing.Size(223, 537);
 			this.panelOrderDetails.TabIndex = 2;
 			// 
+			// richTextBoxQuantity
+			// 
+			this.richTextBoxQuantity.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.richTextBoxQuantity.Cursor = System.Windows.Forms.Cursors.IBeam;
+			this.richTextBoxQuantity.Enabled = false;
+			this.richTextBoxQuantity.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.richTextBoxQuantity.Location = new System.Drawing.Point(156, 143);
+			this.richTextBoxQuantity.Name = "richTextBoxQuantity";
+			this.richTextBoxQuantity.ReadOnly = true;
+			this.richTextBoxQuantity.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+			this.richTextBoxQuantity.Size = new System.Drawing.Size(41, 369);
+			this.richTextBoxQuantity.TabIndex = 2;
+			this.richTextBoxQuantity.TabStop = false;
+			this.richTextBoxQuantity.Text = "";
+			// 
+			// richTextBoxOrderDetails
+			// 
+			this.richTextBoxOrderDetails.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.richTextBoxOrderDetails.Enabled = false;
+			this.richTextBoxOrderDetails.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.richTextBoxOrderDetails.Location = new System.Drawing.Point(22, 143);
+			this.richTextBoxOrderDetails.Name = "richTextBoxOrderDetails";
+			this.richTextBoxOrderDetails.ReadOnly = true;
+			this.richTextBoxOrderDetails.Size = new System.Drawing.Size(105, 369);
+			this.richTextBoxOrderDetails.TabIndex = 2;
+			this.richTextBoxOrderDetails.TabStop = false;
+			this.richTextBoxOrderDetails.Text = "";
+			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(146, 111);
+			this.label1.Location = new System.Drawing.Point(141, 111);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(56, 16);
 			this.label1.TabIndex = 1;
@@ -222,15 +267,39 @@
 			// 
 			// panel1
 			// 
+			this.panel1.Controls.Add(this.buttonDeletePrevious);
+			this.panel1.Controls.Add(this.buttonReset);
 			this.panel1.Controls.Add(this.buttonSaveOrder);
 			this.panel1.Controls.Add(this.buttonNew);
-			this.panel1.Controls.Add(this.textBox1);
+			this.panel1.Controls.Add(this.textBoxName);
 			this.panel1.Controls.Add(this.labelCust);
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
 			this.panel1.Location = new System.Drawing.Point(0, 24);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(661, 83);
 			this.panel1.TabIndex = 4;
+			// 
+			// buttonDeletePrevious
+			// 
+			this.buttonDeletePrevious.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonDeletePrevious.Location = new System.Drawing.Point(426, 45);
+			this.buttonDeletePrevious.Name = "buttonDeletePrevious";
+			this.buttonDeletePrevious.Size = new System.Drawing.Size(145, 23);
+			this.buttonDeletePrevious.TabIndex = 2;
+			this.buttonDeletePrevious.Text = "Delete Previous Item";
+			this.buttonDeletePrevious.UseVisualStyleBackColor = true;
+			this.buttonDeletePrevious.Click += new System.EventHandler(this.buttonDeletePrevious_Click);
+			// 
+			// buttonReset
+			// 
+			this.buttonReset.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.buttonReset.Location = new System.Drawing.Point(577, 45);
+			this.buttonReset.Name = "buttonReset";
+			this.buttonReset.Size = new System.Drawing.Size(78, 23);
+			this.buttonReset.TabIndex = 2;
+			this.buttonReset.Text = "Reset";
+			this.buttonReset.UseVisualStyleBackColor = true;
+			this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
 			// 
 			// buttonSaveOrder
 			// 
@@ -241,6 +310,7 @@
 			this.buttonSaveOrder.TabIndex = 2;
 			this.buttonSaveOrder.Text = "Save Order";
 			this.buttonSaveOrder.UseVisualStyleBackColor = true;
+			this.buttonSaveOrder.Click += new System.EventHandler(this.buttonSaveOrder_Click);
 			// 
 			// buttonNew
 			// 
@@ -251,14 +321,16 @@
 			this.buttonNew.TabIndex = 2;
 			this.buttonNew.Text = "New Order";
 			this.buttonNew.UseVisualStyleBackColor = true;
+			this.buttonNew.Click += new System.EventHandler(this.buttonNew_Click);
 			// 
-			// textBox1
+			// textBoxName
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(119, 12);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(148, 22);
-			this.textBox1.TabIndex = 1;
+			this.textBoxName.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBoxName.Location = new System.Drawing.Point(119, 12);
+			this.textBoxName.Name = "textBoxName";
+			this.textBoxName.Size = new System.Drawing.Size(148, 22);
+			this.textBoxName.TabIndex = 1;
+			this.textBoxName.TextChanged += new System.EventHandler(this.textBoxName_TextChanged);
 			// 
 			// labelCust
 			// 
@@ -324,11 +396,16 @@
 		private System.Windows.Forms.Label labelOrder;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox textBoxName;
 		private System.Windows.Forms.Label labelCust;
 		private System.Windows.Forms.Button buttonNew;
 		private System.Windows.Forms.Button buttonSaveOrder;
 		private System.Windows.Forms.Panel panelForm;
 		private System.Windows.Forms.Label labelCustName;
+		private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
+		private System.Windows.Forms.Button buttonReset;
+		private System.Windows.Forms.RichTextBox richTextBoxQuantity;
+		private System.Windows.Forms.RichTextBox richTextBoxOrderDetails;
+		private System.Windows.Forms.Button buttonDeletePrevious;
 	}
 }

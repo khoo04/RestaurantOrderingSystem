@@ -74,7 +74,7 @@
 			this.textBoxPassword.Location = new System.Drawing.Point(96, 43);
 			this.textBoxPassword.Name = "textBoxPassword";
 			this.textBoxPassword.Size = new System.Drawing.Size(116, 26);
-			this.textBoxPassword.TabIndex = 1;
+			this.textBoxPassword.TabIndex = 2;
 			this.textBoxPassword.UseSystemPasswordChar = true;
 			// 
 			// buttonLogin
@@ -85,9 +85,10 @@
 			this.buttonLogin.Location = new System.Drawing.Point(145, 298);
 			this.buttonLogin.Name = "buttonLogin";
 			this.buttonLogin.Size = new System.Drawing.Size(91, 31);
-			this.buttonLogin.TabIndex = 2;
+			this.buttonLogin.TabIndex = 3;
 			this.buttonLogin.Text = "Login";
 			this.buttonLogin.UseVisualStyleBackColor = true;
+			this.buttonLogin.Click += new System.EventHandler(this.buttonLogin_Click);
 			// 
 			// panel1
 			// 
@@ -115,6 +116,7 @@
 			// 
 			// LoginForm
 			// 
+			this.AcceptButton = this.buttonLogin;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(380, 341);

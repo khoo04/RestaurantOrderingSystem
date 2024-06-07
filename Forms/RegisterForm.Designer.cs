@@ -31,17 +31,17 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RegisterForm));
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
+			this.textBoxFullName = new System.Windows.Forms.TextBox();
 			this.panel1 = new System.Windows.Forms.Panel();
+			this.comboBoxRole = new System.Windows.Forms.ComboBox();
+			this.labelRole = new System.Windows.Forms.Label();
 			this.labelConfirmPassword = new System.Windows.Forms.Label();
 			this.labelPassword = new System.Windows.Forms.Label();
-			this.textBox4 = new System.Windows.Forms.TextBox();
-			this.textBox3 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.textBoxConfirmPassword = new System.Windows.Forms.TextBox();
+			this.textBoxPassword = new System.Windows.Forms.TextBox();
+			this.textBoxUsername = new System.Windows.Forms.TextBox();
 			this.buttonRegister = new System.Windows.Forms.Button();
 			this.pictureBox1 = new System.Windows.Forms.PictureBox();
-			this.labelRole = new System.Windows.Forms.Label();
-			this.comboBoxRole = new System.Windows.Forms.ComboBox();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
@@ -66,13 +66,13 @@
 			this.label2.TabIndex = 0;
 			this.label2.Text = "Username";
 			// 
-			// textBox1
+			// textBoxFullName
 			// 
-			this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox1.Location = new System.Drawing.Point(169, 11);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(164, 26);
-			this.textBox1.TabIndex = 1;
+			this.textBoxFullName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBoxFullName.Location = new System.Drawing.Point(169, 11);
+			this.textBoxFullName.Name = "textBoxFullName";
+			this.textBoxFullName.Size = new System.Drawing.Size(164, 26);
+			this.textBoxFullName.TabIndex = 0;
 			// 
 			// panel1
 			// 
@@ -82,14 +82,37 @@
 			this.panel1.Controls.Add(this.labelConfirmPassword);
 			this.panel1.Controls.Add(this.labelPassword);
 			this.panel1.Controls.Add(this.label2);
-			this.panel1.Controls.Add(this.textBox4);
-			this.panel1.Controls.Add(this.textBox3);
-			this.panel1.Controls.Add(this.textBox2);
-			this.panel1.Controls.Add(this.textBox1);
+			this.panel1.Controls.Add(this.textBoxConfirmPassword);
+			this.panel1.Controls.Add(this.textBoxPassword);
+			this.panel1.Controls.Add(this.textBoxUsername);
+			this.panel1.Controls.Add(this.textBoxFullName);
 			this.panel1.Location = new System.Drawing.Point(65, 207);
 			this.panel1.Name = "panel1";
 			this.panel1.Size = new System.Drawing.Size(347, 214);
 			this.panel1.TabIndex = 2;
+			// 
+			// comboBoxRole
+			// 
+			this.comboBoxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxRole.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.comboBoxRole.FormattingEnabled = true;
+			this.comboBoxRole.Items.AddRange(new object[] {
+            "Cashier",
+            "Manager"});
+			this.comboBoxRole.Location = new System.Drawing.Point(169, 165);
+			this.comboBoxRole.Name = "comboBoxRole";
+			this.comboBoxRole.Size = new System.Drawing.Size(164, 26);
+			this.comboBoxRole.TabIndex = 4;
+			// 
+			// labelRole
+			// 
+			this.labelRole.AutoSize = true;
+			this.labelRole.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelRole.Location = new System.Drawing.Point(16, 169);
+			this.labelRole.Name = "labelRole";
+			this.labelRole.Size = new System.Drawing.Size(77, 18);
+			this.labelRole.TabIndex = 0;
+			this.labelRole.Text = "User Role";
 			// 
 			// labelConfirmPassword
 			// 
@@ -111,31 +134,31 @@
 			this.labelPassword.TabIndex = 0;
 			this.labelPassword.Text = "Password";
 			// 
-			// textBox4
+			// textBoxConfirmPassword
 			// 
-			this.textBox4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox4.Location = new System.Drawing.Point(169, 125);
-			this.textBox4.Name = "textBox4";
-			this.textBox4.Size = new System.Drawing.Size(164, 26);
-			this.textBox4.TabIndex = 1;
-			this.textBox4.UseSystemPasswordChar = true;
+			this.textBoxConfirmPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBoxConfirmPassword.Location = new System.Drawing.Point(169, 125);
+			this.textBoxConfirmPassword.Name = "textBoxConfirmPassword";
+			this.textBoxConfirmPassword.Size = new System.Drawing.Size(164, 26);
+			this.textBoxConfirmPassword.TabIndex = 3;
+			this.textBoxConfirmPassword.UseSystemPasswordChar = true;
 			// 
-			// textBox3
+			// textBoxPassword
 			// 
-			this.textBox3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox3.Location = new System.Drawing.Point(169, 87);
-			this.textBox3.Name = "textBox3";
-			this.textBox3.Size = new System.Drawing.Size(164, 26);
-			this.textBox3.TabIndex = 1;
-			this.textBox3.UseSystemPasswordChar = true;
+			this.textBoxPassword.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBoxPassword.Location = new System.Drawing.Point(169, 87);
+			this.textBoxPassword.Name = "textBoxPassword";
+			this.textBoxPassword.Size = new System.Drawing.Size(164, 26);
+			this.textBoxPassword.TabIndex = 2;
+			this.textBoxPassword.UseSystemPasswordChar = true;
 			// 
-			// textBox2
+			// textBoxUsername
 			// 
-			this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.textBox2.Location = new System.Drawing.Point(169, 49);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.Size = new System.Drawing.Size(164, 26);
-			this.textBox2.TabIndex = 1;
+			this.textBoxUsername.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.textBoxUsername.Location = new System.Drawing.Point(169, 49);
+			this.textBoxUsername.Name = "textBoxUsername";
+			this.textBoxUsername.Size = new System.Drawing.Size(164, 26);
+			this.textBoxUsername.TabIndex = 1;
 			// 
 			// buttonRegister
 			// 
@@ -146,6 +169,7 @@
 			this.buttonRegister.TabIndex = 2;
 			this.buttonRegister.Text = "Register";
 			this.buttonRegister.UseVisualStyleBackColor = true;
+			this.buttonRegister.Click += new System.EventHandler(this.buttonRegister_Click);
 			// 
 			// pictureBox1
 			// 
@@ -157,31 +181,9 @@
 			this.pictureBox1.TabIndex = 3;
 			this.pictureBox1.TabStop = false;
 			// 
-			// labelRole
-			// 
-			this.labelRole.AutoSize = true;
-			this.labelRole.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelRole.Location = new System.Drawing.Point(16, 169);
-			this.labelRole.Name = "labelRole";
-			this.labelRole.Size = new System.Drawing.Size(77, 18);
-			this.labelRole.TabIndex = 0;
-			this.labelRole.Text = "User Role";
-			// 
-			// comboBoxRole
-			// 
-			this.comboBoxRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.comboBoxRole.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.comboBoxRole.FormattingEnabled = true;
-			this.comboBoxRole.Items.AddRange(new object[] {
-            "Cashier",
-            "Manager"});
-			this.comboBoxRole.Location = new System.Drawing.Point(169, 165);
-			this.comboBoxRole.Name = "comboBoxRole";
-			this.comboBoxRole.Size = new System.Drawing.Size(164, 26);
-			this.comboBoxRole.TabIndex = 2;
-			// 
 			// RegisterForm
 			// 
+			this.AcceptButton = this.buttonRegister;
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(476, 508);
@@ -206,13 +208,13 @@
 
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
-		private System.Windows.Forms.TextBox textBox1;
+		private System.Windows.Forms.TextBox textBoxFullName;
 		private System.Windows.Forms.Panel panel1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox textBoxUsername;
 		private System.Windows.Forms.Label labelConfirmPassword;
 		private System.Windows.Forms.Label labelPassword;
-		private System.Windows.Forms.TextBox textBox4;
-		private System.Windows.Forms.TextBox textBox3;
+		private System.Windows.Forms.TextBox textBoxConfirmPassword;
+		private System.Windows.Forms.TextBox textBoxPassword;
 		private System.Windows.Forms.PictureBox pictureBox1;
 		private System.Windows.Forms.Button buttonRegister;
 		private System.Windows.Forms.ComboBox comboBoxRole;

@@ -37,9 +37,11 @@
 			this.labelReportDetails = new System.Windows.Forms.Label();
 			this.labelTimeGenerated = new System.Windows.Forms.Label();
 			this.labelReportDateRange = new System.Windows.Forms.Label();
-			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.dataGridViewReport = new System.Windows.Forms.DataGridView();
 			this.labelTotalRevenue = new System.Windows.Forms.Label();
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+			this.labelOrderBy = new System.Windows.Forms.Label();
+			this.comboBoxOrderBy = new System.Windows.Forms.ComboBox();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewReport)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// labelStartDate
@@ -82,6 +84,7 @@
 			this.buttonReset.TabIndex = 2;
 			this.buttonReset.Text = "Reset";
 			this.buttonReset.UseVisualStyleBackColor = true;
+			this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
 			// 
 			// buttonGenerateReport
 			// 
@@ -91,6 +94,7 @@
 			this.buttonGenerateReport.TabIndex = 2;
 			this.buttonGenerateReport.Text = "Generate Report";
 			this.buttonGenerateReport.UseVisualStyleBackColor = true;
+			this.buttonGenerateReport.Click += new System.EventHandler(this.buttonGenerateReport_Click);
 			// 
 			// labelReportDetails
 			// 
@@ -121,13 +125,13 @@
 			this.labelReportDateRange.TabIndex = 5;
 			this.labelReportDateRange.Text = "Date Range: Start Date to End Date";
 			// 
-			// dataGridView1
+			// dataGridViewReport
 			// 
-			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dataGridView1.Location = new System.Drawing.Point(77, 223);
-			this.dataGridView1.Name = "dataGridView1";
-			this.dataGridView1.Size = new System.Drawing.Size(718, 215);
-			this.dataGridView1.TabIndex = 6;
+			this.dataGridViewReport.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridViewReport.Location = new System.Drawing.Point(77, 223);
+			this.dataGridViewReport.Name = "dataGridViewReport";
+			this.dataGridViewReport.Size = new System.Drawing.Size(718, 215);
+			this.dataGridViewReport.TabIndex = 6;
 			// 
 			// labelTotalRevenue
 			// 
@@ -138,28 +142,52 @@
 			this.labelTotalRevenue.TabIndex = 7;
 			this.labelTotalRevenue.Text = "Total Revenue";
 			// 
+			// labelOrderBy
+			// 
+			this.labelOrderBy.AutoSize = true;
+			this.labelOrderBy.Location = new System.Drawing.Point(73, 74);
+			this.labelOrderBy.Name = "labelOrderBy";
+			this.labelOrderBy.Size = new System.Drawing.Size(70, 18);
+			this.labelOrderBy.TabIndex = 0;
+			this.labelOrderBy.Text = "Order By";
+			// 
+			// comboBoxOrderBy
+			// 
+			this.comboBoxOrderBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.comboBoxOrderBy.FormattingEnabled = true;
+			this.comboBoxOrderBy.Items.AddRange(new object[] {
+            "Max Sales",
+            "Min Sales"});
+			this.comboBoxOrderBy.Location = new System.Drawing.Point(176, 71);
+			this.comboBoxOrderBy.Name = "comboBoxOrderBy";
+			this.comboBoxOrderBy.Size = new System.Drawing.Size(121, 26);
+			this.comboBoxOrderBy.TabIndex = 8;
+			// 
 			// ViewReportForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(868, 498);
+			this.Controls.Add(this.comboBoxOrderBy);
 			this.Controls.Add(this.labelTotalRevenue);
-			this.Controls.Add(this.dataGridView1);
+			this.Controls.Add(this.dataGridViewReport);
 			this.Controls.Add(this.labelReportDateRange);
 			this.Controls.Add(this.labelTimeGenerated);
 			this.Controls.Add(this.labelReportDetails);
 			this.Controls.Add(this.buttonGenerateReport);
 			this.Controls.Add(this.buttonReset);
 			this.Controls.Add(this.dateTimePickerEndDate);
+			this.Controls.Add(this.labelOrderBy);
 			this.Controls.Add(this.labelEndDate);
 			this.Controls.Add(this.dateTimePickerStartDate);
 			this.Controls.Add(this.labelStartDate);
 			this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "ViewReportForm";
 			this.Text = "ViewReportForm";
-			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+			this.Load += new System.EventHandler(this.ViewReportForm_Load);
+			((System.ComponentModel.ISupportInitialize)(this.dataGridViewReport)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -176,7 +204,9 @@
 		private System.Windows.Forms.Label labelReportDetails;
 		private System.Windows.Forms.Label labelTimeGenerated;
 		private System.Windows.Forms.Label labelReportDateRange;
-		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.DataGridView dataGridViewReport;
 		private System.Windows.Forms.Label labelTotalRevenue;
+		private System.Windows.Forms.Label labelOrderBy;
+		private System.Windows.Forms.ComboBox comboBoxOrderBy;
 	}
 }

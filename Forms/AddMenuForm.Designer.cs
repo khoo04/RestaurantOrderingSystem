@@ -29,18 +29,20 @@
 		private void InitializeComponent()
 		{
 			this.labelAdd = new System.Windows.Forms.Label();
-			this.labelMenu = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+			this.labelMenuName = new System.Windows.Forms.Label();
+			this.textBoxName = new System.Windows.Forms.TextBox();
+			this.richTextBoxDesc = new System.Windows.Forms.RichTextBox();
 			this.labelDesc = new System.Windows.Forms.Label();
 			this.labelCat = new System.Windows.Forms.Label();
 			this.comboBoxCategory = new System.Windows.Forms.ComboBox();
 			this.buttonAdd = new System.Windows.Forms.Button();
 			this.buttonReset = new System.Windows.Forms.Button();
-			this.pictureBox1 = new System.Windows.Forms.PictureBox();
+			this.pictureBoxImage = new System.Windows.Forms.PictureBox();
 			this.openImageFileDialog = new System.Windows.Forms.OpenFileDialog();
 			this.buttonUpload = new System.Windows.Forms.Button();
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+			this.textBoxPrice = new System.Windows.Forms.TextBox();
+			this.labelPrice = new System.Windows.Forms.Label();
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// labelAdd
@@ -54,31 +56,31 @@
 			this.labelAdd.TabIndex = 0;
 			this.labelAdd.Text = "Add Menu";
 			// 
-			// labelMenu
+			// labelMenuName
 			// 
-			this.labelMenu.AutoSize = true;
-			this.labelMenu.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.labelMenu.Location = new System.Drawing.Point(90, 80);
-			this.labelMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-			this.labelMenu.Name = "labelMenu";
-			this.labelMenu.Size = new System.Drawing.Size(50, 18);
-			this.labelMenu.TabIndex = 0;
-			this.labelMenu.Text = "Name";
+			this.labelMenuName.AutoSize = true;
+			this.labelMenuName.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelMenuName.Location = new System.Drawing.Point(90, 76);
+			this.labelMenuName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.labelMenuName.Name = "labelMenuName";
+			this.labelMenuName.Size = new System.Drawing.Size(50, 18);
+			this.labelMenuName.TabIndex = 0;
+			this.labelMenuName.Text = "Name";
 			// 
-			// textBox1
+			// textBoxName
 			// 
-			this.textBox1.Location = new System.Drawing.Point(161, 72);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.Size = new System.Drawing.Size(217, 26);
-			this.textBox1.TabIndex = 1;
+			this.textBoxName.Location = new System.Drawing.Point(161, 72);
+			this.textBoxName.Name = "textBoxName";
+			this.textBoxName.Size = new System.Drawing.Size(217, 26);
+			this.textBoxName.TabIndex = 1;
 			// 
-			// richTextBox1
+			// richTextBoxDesc
 			// 
-			this.richTextBox1.Location = new System.Drawing.Point(161, 132);
-			this.richTextBox1.Name = "richTextBox1";
-			this.richTextBox1.Size = new System.Drawing.Size(217, 130);
-			this.richTextBox1.TabIndex = 2;
-			this.richTextBox1.Text = "";
+			this.richTextBoxDesc.Location = new System.Drawing.Point(161, 132);
+			this.richTextBoxDesc.Name = "richTextBoxDesc";
+			this.richTextBoxDesc.Size = new System.Drawing.Size(217, 130);
+			this.richTextBoxDesc.TabIndex = 2;
+			this.richTextBoxDesc.Text = "";
 			// 
 			// labelDesc
 			// 
@@ -104,7 +106,14 @@
 			// 
 			// comboBoxCategory
 			// 
+			this.comboBoxCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.comboBoxCategory.FormattingEnabled = true;
+			this.comboBoxCategory.Items.AddRange(new object[] {
+            "Appetizer",
+            "Main Course",
+            "Dessert",
+            "Beverage",
+            "Special"});
 			this.comboBoxCategory.Location = new System.Drawing.Point(161, 282);
 			this.comboBoxCategory.Name = "comboBoxCategory";
 			this.comboBoxCategory.Size = new System.Drawing.Size(217, 26);
@@ -115,27 +124,30 @@
 			this.buttonAdd.Location = new System.Drawing.Point(605, 425);
 			this.buttonAdd.Name = "buttonAdd";
 			this.buttonAdd.Size = new System.Drawing.Size(132, 30);
-			this.buttonAdd.TabIndex = 4;
+			this.buttonAdd.TabIndex = 6;
 			this.buttonAdd.Text = "Add New Menu";
 			this.buttonAdd.UseVisualStyleBackColor = true;
+			this.buttonAdd.Click += new System.EventHandler(this.buttonAdd_Click);
 			// 
 			// buttonReset
 			// 
 			this.buttonReset.Location = new System.Drawing.Point(759, 425);
 			this.buttonReset.Name = "buttonReset";
 			this.buttonReset.Size = new System.Drawing.Size(74, 30);
-			this.buttonReset.TabIndex = 4;
+			this.buttonReset.TabIndex = 7;
 			this.buttonReset.Text = "Reset";
 			this.buttonReset.UseVisualStyleBackColor = true;
+			this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
 			// 
-			// pictureBox1
+			// pictureBoxImage
 			// 
-			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.pictureBox1.Location = new System.Drawing.Point(484, 72);
-			this.pictureBox1.Name = "pictureBox1";
-			this.pictureBox1.Size = new System.Drawing.Size(349, 190);
-			this.pictureBox1.TabIndex = 5;
-			this.pictureBox1.TabStop = false;
+			this.pictureBoxImage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.pictureBoxImage.Location = new System.Drawing.Point(484, 72);
+			this.pictureBoxImage.Name = "pictureBoxImage";
+			this.pictureBoxImage.Size = new System.Drawing.Size(349, 190);
+			this.pictureBoxImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.pictureBoxImage.TabIndex = 5;
+			this.pictureBoxImage.TabStop = false;
 			// 
 			// openImageFileDialog
 			// 
@@ -146,9 +158,28 @@
 			this.buttonUpload.Location = new System.Drawing.Point(656, 282);
 			this.buttonUpload.Name = "buttonUpload";
 			this.buttonUpload.Size = new System.Drawing.Size(177, 32);
-			this.buttonUpload.TabIndex = 6;
+			this.buttonUpload.TabIndex = 5;
 			this.buttonUpload.Text = "Upload Menu Image";
 			this.buttonUpload.UseVisualStyleBackColor = true;
+			this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
+			// 
+			// textBoxPrice
+			// 
+			this.textBoxPrice.Location = new System.Drawing.Point(161, 339);
+			this.textBoxPrice.Name = "textBoxPrice";
+			this.textBoxPrice.Size = new System.Drawing.Size(217, 26);
+			this.textBoxPrice.TabIndex = 4;
+			// 
+			// labelPrice
+			// 
+			this.labelPrice.AutoSize = true;
+			this.labelPrice.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.labelPrice.Location = new System.Drawing.Point(90, 343);
+			this.labelPrice.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+			this.labelPrice.Name = "labelPrice";
+			this.labelPrice.Size = new System.Drawing.Size(45, 18);
+			this.labelPrice.TabIndex = 0;
+			this.labelPrice.Text = "Price";
 			// 
 			// AddMenuForm
 			// 
@@ -156,22 +187,25 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(884, 537);
 			this.Controls.Add(this.buttonUpload);
-			this.Controls.Add(this.pictureBox1);
+			this.Controls.Add(this.pictureBoxImage);
 			this.Controls.Add(this.buttonReset);
 			this.Controls.Add(this.buttonAdd);
 			this.Controls.Add(this.comboBoxCategory);
-			this.Controls.Add(this.richTextBox1);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.richTextBoxDesc);
+			this.Controls.Add(this.textBoxPrice);
+			this.Controls.Add(this.textBoxName);
 			this.Controls.Add(this.labelCat);
 			this.Controls.Add(this.labelDesc);
-			this.Controls.Add(this.labelMenu);
+			this.Controls.Add(this.labelPrice);
+			this.Controls.Add(this.labelMenuName);
 			this.Controls.Add(this.labelAdd);
 			this.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-			this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+			this.Margin = new System.Windows.Forms.Padding(4);
 			this.Name = "AddMenuForm";
 			this.Text = "AddPorductForm";
-			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+			this.Load += new System.EventHandler(this.AddMenuForm_Load);
+			((System.ComponentModel.ISupportInitialize)(this.pictureBoxImage)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -180,16 +214,18 @@
 		#endregion
 
 		private System.Windows.Forms.Label labelAdd;
-		private System.Windows.Forms.Label labelMenu;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.RichTextBox richTextBox1;
+		private System.Windows.Forms.Label labelMenuName;
+		private System.Windows.Forms.TextBox textBoxName;
+		private System.Windows.Forms.RichTextBox richTextBoxDesc;
 		private System.Windows.Forms.Label labelDesc;
 		private System.Windows.Forms.Label labelCat;
 		private System.Windows.Forms.ComboBox comboBoxCategory;
 		private System.Windows.Forms.Button buttonAdd;
 		private System.Windows.Forms.Button buttonReset;
-		private System.Windows.Forms.PictureBox pictureBox1;
+		private System.Windows.Forms.PictureBox pictureBoxImage;
 		private System.Windows.Forms.OpenFileDialog openImageFileDialog;
 		private System.Windows.Forms.Button buttonUpload;
+		private System.Windows.Forms.TextBox textBoxPrice;
+		private System.Windows.Forms.Label labelPrice;
 	}
 }

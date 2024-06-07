@@ -12,9 +12,11 @@ namespace RestaurantOrderingSystem.Forms
 {
 	public partial class ManagerForm : Form
 	{
-		public ManagerForm()
+		public User User {  get; set; }
+		public ManagerForm(User user)
 		{
 			InitializeComponent();
+			User = user;
 		}
 
 		private void loadForm(Form form)
@@ -34,19 +36,26 @@ namespace RestaurantOrderingSystem.Forms
 			Application.Exit();
 		}
 
-		private void addMenuToolStripMenuItem_Click(object sender, EventArgs e)
+		private void viewToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			loadForm(new ViewReportForm());
+		}
+
+		private void logOutToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			this.Hide();
+			new MainForm().ShowDialog();
+			this.Close();
+		}
+
+		private void addMenuToolStripMenuItem1_Click(object sender, EventArgs e)
 		{
 			loadForm(new AddMenuForm());
 		}
 
-		private void deleteMenuToolStripMenuItem_Click(object sender, EventArgs e)
+		private void manageMenuToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			loadForm(new DeleteMenuForm());
-		}
-
-		private void viewToolStripMenuItem_Click(object sender, EventArgs e)
-		{
-			loadForm(new ViewReportForm());
+			loadForm(new ManageMenuForm());
 		}
 	}
 }

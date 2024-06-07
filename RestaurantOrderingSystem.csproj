@@ -37,6 +37,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -52,6 +53,7 @@
       <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
     </Reference>
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Linq" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -87,11 +89,11 @@
     <Compile Include="Forms\CashierForm.Designer.cs">
       <DependentUpon>CashierForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DeleteMenuForm.cs">
+    <Compile Include="Forms\ManageMenuForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\DeleteMenuForm.Designer.cs">
-      <DependentUpon>DeleteMenuForm.cs</DependentUpon>
+    <Compile Include="Forms\ManageMenuForm.Designer.cs">
+      <DependentUpon>ManageMenuForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DessertForm.cs">
       <SubType>Form</SubType>
@@ -123,6 +125,12 @@
     <Compile Include="Forms\SpecialForm.Designer.cs">
       <DependentUpon>SpecialForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\UpdateMenuForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UpdateMenuForm.Designer.cs">
+      <DependentUpon>UpdateMenuForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\ViewReportForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,8 +155,28 @@
     <Compile Include="Forms\RegisterForm.Designer.cs">
       <DependentUpon>RegisterForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Appetizer.cs" />
+    <Compile Include="Models\Beverage.cs" />
+    <Compile Include="Models\Cashier.cs" />
+    <Compile Include="Models\CustomerOrder.cs" />
+    <Compile Include="Models\Dessert.cs" />
+    <Compile Include="Models\MainCourse.cs" />
+    <Compile Include="Models\Manager.cs" />
+    <Compile Include="Models\MenuItem.cs" />
+    <Compile Include="Models\Registerable.cs" />
+    <Compile Include="Models\ReportData.cs" />
+    <Compile Include="Models\Special.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RestaurantDB.cs">
+      <DependentUpon>RestaurantDB.dbml</DependentUpon>
+    </Compile>
+    <Compile Include="RestaurantDB.designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RestaurantDB.dbml</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Forms\AddMenuForm.resx">
       <DependentUpon>AddMenuForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -161,8 +189,8 @@
     <EmbeddedResource Include="Forms\CashierForm.resx">
       <DependentUpon>CashierForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DeleteMenuForm.resx">
-      <DependentUpon>DeleteMenuForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\ManageMenuForm.resx">
+      <DependentUpon>ManageMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DessertForm.resx">
       <DependentUpon>DessertForm.cs</DependentUpon>
@@ -178,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\SpecialForm.resx">
       <DependentUpon>SpecialForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UpdateMenuForm.resx">
+      <DependentUpon>UpdateMenuForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\ViewReportForm.resx">
       <DependentUpon>ViewReportForm.cs</DependentUpon>
@@ -211,6 +242,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RestaurantDB.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>RestaurantDB.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RestaurantDB.dbml.layout">
+      <DependentUpon>RestaurantDB.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -228,17 +267,14 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
+    <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="RestaurantDB_log.ldf">
       <DependentUpon>RestaurantDB.mdf</DependentUpon>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Restaurant_Logo.png" />
-    <Content Include="RestaurantDB.mdf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+    <Content Include="RestaurantDB.mdf" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

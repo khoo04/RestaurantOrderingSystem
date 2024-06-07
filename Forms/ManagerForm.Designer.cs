@@ -30,11 +30,10 @@
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ManagerForm));
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-			this.addProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.addMenuToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+			this.manageMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.logOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.addMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.deleteMenuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.panelManage = new System.Windows.Forms.Panel();
 			this.menuStrip1.SuspendLayout();
@@ -43,7 +42,8 @@
 			// menuStrip1
 			// 
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addProductToolStripMenuItem,
+            this.addMenuToolStripMenuItem1,
+            this.manageMenuToolStripMenuItem,
             this.viewToolStripMenuItem,
             this.logOutToolStripMenuItem,
             this.exitToolStripMenuItem});
@@ -53,14 +53,19 @@
 			this.menuStrip1.TabIndex = 0;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
-			// addProductToolStripMenuItem
+			// addMenuToolStripMenuItem1
 			// 
-			this.addProductToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addMenuToolStripMenuItem,
-            this.deleteMenuToolStripMenuItem});
-			this.addProductToolStripMenuItem.Name = "addProductToolStripMenuItem";
-			this.addProductToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
-			this.addProductToolStripMenuItem.Text = "Manage Menu";
+			this.addMenuToolStripMenuItem1.Name = "addMenuToolStripMenuItem1";
+			this.addMenuToolStripMenuItem1.Size = new System.Drawing.Size(75, 20);
+			this.addMenuToolStripMenuItem1.Text = "Add Menu";
+			this.addMenuToolStripMenuItem1.Click += new System.EventHandler(this.addMenuToolStripMenuItem1_Click);
+			// 
+			// manageMenuToolStripMenuItem
+			// 
+			this.manageMenuToolStripMenuItem.Name = "manageMenuToolStripMenuItem";
+			this.manageMenuToolStripMenuItem.Size = new System.Drawing.Size(96, 20);
+			this.manageMenuToolStripMenuItem.Text = "Manage Menu";
+			this.manageMenuToolStripMenuItem.Click += new System.EventHandler(this.manageMenuToolStripMenuItem_Click);
 			// 
 			// viewToolStripMenuItem
 			// 
@@ -74,20 +79,7 @@
 			this.logOutToolStripMenuItem.Name = "logOutToolStripMenuItem";
 			this.logOutToolStripMenuItem.Size = new System.Drawing.Size(62, 20);
 			this.logOutToolStripMenuItem.Text = "Log Out";
-			// 
-			// addMenuToolStripMenuItem
-			// 
-			this.addMenuToolStripMenuItem.Name = "addMenuToolStripMenuItem";
-			this.addMenuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.addMenuToolStripMenuItem.Text = "Add Menu";
-			this.addMenuToolStripMenuItem.Click += new System.EventHandler(this.addMenuToolStripMenuItem_Click);
-			// 
-			// deleteMenuToolStripMenuItem
-			// 
-			this.deleteMenuToolStripMenuItem.Name = "deleteMenuToolStripMenuItem";
-			this.deleteMenuToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-			this.deleteMenuToolStripMenuItem.Text = "Delete Menu";
-			this.deleteMenuToolStripMenuItem.Click += new System.EventHandler(this.deleteMenuToolStripMenuItem_Click);
+			this.logOutToolStripMenuItem.Click += new System.EventHandler(this.logOutToolStripMenuItem_Click);
 			// 
 			// exitToolStripMenuItem
 			// 
@@ -114,6 +106,7 @@
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MainMenuStrip = this.menuStrip1;
 			this.Name = "ManagerForm";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "ManagerForm";
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
@@ -125,12 +118,11 @@
 		#endregion
 
 		private System.Windows.Forms.MenuStrip menuStrip1;
-		private System.Windows.Forms.ToolStripMenuItem addProductToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem addMenuToolStripMenuItem;
-		private System.Windows.Forms.ToolStripMenuItem deleteMenuToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem logOutToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
 		private System.Windows.Forms.Panel panelManage;
+		private System.Windows.Forms.ToolStripMenuItem addMenuToolStripMenuItem1;
+		private System.Windows.Forms.ToolStripMenuItem manageMenuToolStripMenuItem;
 	}
 }
